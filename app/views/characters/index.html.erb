@@ -1,0 +1,32 @@
+ <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to "#{current_user.nickname}さん", users_path(current_user), class: :greeting__link%>
+      </div>
+ <% end %>    
+
+<%= form_with model: @character, url: characters_index_path, local: true do |form| %>
+  <label>性別：</label>
+  <%= form.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"sex-select"}) %>
+<% end %>
+
+<div class="calculation-bmi">
+  <p class="caption"></p>
+  <form oninput="bmi.value = Math.floor((weight.value / ((height.value / 100) * (height.value / 100))) * 10) / 10">
+    <p>
+      <label>身長：</label>
+      <input name="height" type="number" placeholder="例 170">
+      <span>cm</span>
+    </p>
+    <p>
+      <label>体重：</label>
+      <input name="weight" type="number" placeholder="例 60">
+      <span>kg</span>
+    </p>
+    <p>
+      あなたの<label class="result-bmi">BMIは：</label>
+      <output name="bmi"></output>
+    </p>
+      ※標準値:18.50〜25.00
+  </form>
+</div>

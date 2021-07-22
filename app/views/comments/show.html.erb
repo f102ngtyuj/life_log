@@ -1,0 +1,12 @@
+<%= link_to '編集', root_path, method: :get %>
+<%= link_to '削除', root_path, method: :delete %>
+
+<p><h3><%= "タイトル" %></h3></p>
+<p><%= @comment.title %></p>
+<h3><%= "日時" %></h3>
+<p><%= @comment.start_time %></p>
+<h3><%= "内容" %></h3>
+<p><%= @comment.content %></p>
+<h3><%= "歩いた歩数" %></h3>
+<p><%= @comment.step %>歩</p>
+ <%=link_to 'もどる', root_path, class:"back-btn" %>

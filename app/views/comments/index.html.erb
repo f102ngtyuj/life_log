@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+  <%= link_to 'コメント追加', new_comment_path %> 
+  <p><%= link_to "BMI計算", user_characters_path(current_user), class: "get" %></p>
+  <div class="greeting">
+    <p><%= link_to "#{current_user.nickname}さん", user_path(current_user), method: :get, class: :greeting__link%>
+    のマイページ</p>
+  </div>
+<% end %>  
+
+<% if user_signed_in? %>
+  <%= month_calendar events: @comments do |date, comments| %>
+    <%= date.day %>
+    <% comments.each do |comments| %>
+      <div>
+        <%= link_to comments.title,comment_path(comments.id) %>
+      </div>
+    <% end %>
+  <% end %>
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+<% end %>
+
+ 

@@ -1,0 +1,31 @@
+<div class="text-input">
+  <h1>項目入力</h1>
+</div>
+
+<%= form_with(model: @comment, class: "input-form", local: true) do |form| %>
+  <div class="text-title">
+    <h3><%= form.label :"タイトル" %></h3>
+    <p><%= form.text_field :title %></p>
+  </div>
+
+  <div class="time">
+    <h3><%= form.label :"日時" %></h3>
+    <p><%= form.datetime_select :start_time %></p>
+  </div>
+
+  <div class="content">
+    <h3><%= form.label :"内容" %></h3>
+    <p><%= form.text_area :content %></p>
+  </div>
+
+  <div class="step">
+    <h3><%= form.label :"歩いた歩数" %></h3>
+    <p><%= form.text_field :step %>歩</p>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+ <%=link_to 'もどる', root_path, class:"back-btn" %>
