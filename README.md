@@ -44,8 +44,9 @@ BMI計算機能
 [![Image from Gyazo](https://i.gyazo.com/6fbd0d6c408623d3b0d4705ebe70661a.png)](https://gyazo.com/6fbd0d6c408623d3b0d4705ebe70661a)
 
 ## ローカルでの動作方法
-#### % git clone <リモートリポジトリのURL>
-#### % cd アプリケーションのディレクトリ
+% git clone https://github.com/f102ngtyuj/life_log
+% cd projects
+% cd lifelog_app_35947
 % bundle install
 % yarn install
 % rails db:create
